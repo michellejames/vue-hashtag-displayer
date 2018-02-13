@@ -1,0 +1,1 @@
+{"version":3,"sources":["TweetFeedComponent.js"],"names":["TweetFeedComponent","Vue","component","template"],"mappings":";;AAAA,IAAIA,qBAAqBC,IAAIC,SAAJ,CAAc,YAAd,EAA4B;AACpDC;AADoD,CAA5B,CAAzB","file":"TweetFeedComponent.js","sourcesContent":["var TweetFeedComponent = Vue.component(\"tweet-feed\", {\n\ttemplate: `\n\t\t<div class=\"tweetfeed\"></div>\n\t`,\n})\n"]}
