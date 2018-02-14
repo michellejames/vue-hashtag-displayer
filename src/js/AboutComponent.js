@@ -3,6 +3,7 @@ var AboutComponent = Vue.component("about", {
 		<div class="about">
 			<h1>Huh?</h1>
 			<p>This project was created for a Vue class at the Creative Circus</p>
+			<router-link class='nav' to="/">Home</router-link>
 		</div>
 	`,
 })
