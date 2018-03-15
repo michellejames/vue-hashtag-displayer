@@ -1,18 +1,18 @@
 var HashtagFormComponent = Vue.component("hashtag-form", {
+	props: ["hashtag"],
 	data: function (){
 		return {
-			enteredHashtag: "",
+			enteredHashtag: "#" + this.hashtag,
 		}
 	},
 	template: `
 		<div>
-			<input v-model="enteredHashtag" placeholder="#cats">
+			<input v-model="enteredHashtag">
 		</div>
 	`,
 
 	watch: {
 		enteredHashtag: function (){
-			console.log(this.enteredHashtag);
 
 			if(this.enteredHashtag[0] != "#") {
 				this.enteredHashtag = "#" + this.enteredHashtag;
@@ -21,8 +21,6 @@ var HashtagFormComponent = Vue.component("hashtag-form", {
 			if ((this.enteredHashtag.length >= 4)) {
 				this.$emit("hashtagchanged", this.enteredHashtag);			//custome event names alwasy lowercase
 			}
-
-			//Hashtags changed and here is new hashtag:
 		}
 	}
 })

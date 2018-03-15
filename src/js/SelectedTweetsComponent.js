@@ -1,8 +1,8 @@
 var SelectedTweetsComponent = Vue.component("selected-tweets", {
-	props: ["hashtag"],
+	props: ["tweets", "hashtag"],
 	template: `
 		<div>
-			<p>Showing 15 tweets containing {{hashtag}}</p>
+			<p>Showing {{tweets.length}} tweets containing "{{hashtag}}"</p>
 		</div>
 	`,
 	methods: {

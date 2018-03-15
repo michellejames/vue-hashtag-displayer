@@ -7,4 +7,4 @@ var HomeComponent = Vue.component("home", {
 			<router-link class="nav" to="/About">Huh?</router-link>
 		</div>
 	`,
-})
+});

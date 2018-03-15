@@ -1,16 +1,16 @@
 "use strict";
 
 var HashtagFormComponent = Vue.component("hashtag-form", {
+	props: ["hashtag"],
 	data: function data() {
 		return {
-			enteredHashtag: ""
+			enteredHashtag: "#" + this.hashtag
 		};
 	},
-	template: "\n\t\t<div>\n\t\t\t<input v-model=\"enteredHashtag\" placeholder=\"#cats\">\n\t\t</div>\n\t",
+	template: "\n\t\t<div>\n\t\t\t<input v-model=\"enteredHashtag\">\n\t\t</div>\n\t",
 
 	watch: {
 		enteredHashtag: function enteredHashtag() {
-			console.log(this.enteredHashtag);
 
 			if (this.enteredHashtag[0] != "#") {
 				this.enteredHashtag = "#" + this.enteredHashtag;
@@ -19,8 +19,6 @@ var HashtagFormComponent = Vue.component("hashtag-form", {
 			if (this.enteredHashtag.length >= 4) {
 				this.$emit("hashtagchanged", this.enteredHashtag); //custome event names alwasy lowercase
 			}
-
-			//Hashtags changed and here is new hashtag:
 		}
 	}
 });

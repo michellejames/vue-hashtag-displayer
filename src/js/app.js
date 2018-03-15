@@ -22,34 +22,18 @@ var app = new Vue({
 	},
 	created: function() {
 		// use created to do initial AJAX lookups
-		let self = this;
-		let countdown;
-
-		let refreshTweets = setInterval(function(){
-			if (self.timer > 0) {
-				self.timer -= 1
-			} else if (self.timer = 0) {
-				self.getTweets();
-				self.timer = 20;
-			}
-			// self.getTweets();
-		}, 2000);
-
-		// this.getTweets();
-		// let countdown = setInterval(() => {
-		// 	if (this.timer > 0 ) {
-		// 		this.timer -= 1;
-		// 	} 
-		// 		this.getTweets();
-		// 		this.timer = 20;
-		// 	}
-		// }, 1000);
-
+		let refreshTweets = setInterval(this.countdown, 1000);
 	},
-	// components: {
-	//   'TweetFeedComponent': SelectedTweetsComponent,
-	// },
 	methods: {
+		countdown: function (enteredHashtag) {
+			this.timer--;
+
+			if (this.timer == 0) {
+				this.timer = 20;
+
+				this.getTweets();
+			}
+		},
 		userChangedHashtag: function (enteredHashtag) {
 			this.hashtag = enteredHashtag;
 			this.getTweets();
